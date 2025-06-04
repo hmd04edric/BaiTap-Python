@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = {
+input_dict = {
     "Name": ["An", "Bình", "Chi","Đạt","Nam","Lan","Nhung","Quân","Long","Linh"],
     "Age": [20, 21, 19, 19, 20, 21, 19, 20, 21, 19],
     "Gender": ["Nam", "Nữ", "Nữ", "Nam", "Nam", "Nữ", "Nữ","Nam", "Nam", "Nữ"],
@@ -20,6 +20,8 @@ else:
     print("Index 10 không tồn tại.")
 # Các cột Name và Score
 print(df[["Name", "Score"]])
+# theem cot Pass
 df["Pass"] = df["Score"] >= 5
+#sap xep
 df_sorted = df.sort_values(by="Score", ascending=False)
 print(df)
