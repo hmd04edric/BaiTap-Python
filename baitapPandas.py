@@ -6,7 +6,7 @@ input_dict = {
     "Gender": ["Nam", "Nữ", "Nữ", "Nam", "Nam", "Nữ", "Nữ","Nam", "Nam", "Nữ"],
     "Score": [7.3, 2, 5.5, 10, 9, 8.5, 8, 7, 7.5, 6]
 }
-df = pd.DataFrame(data)
+df = pd.DataFrame(input_dict)
 # Toàn bộ dữ liệu của bảng
 print(df)
 # 3 dòng đầu tiên
