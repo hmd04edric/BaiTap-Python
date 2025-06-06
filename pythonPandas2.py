@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # bảng Nhân viên
-employee_data = {
+employee_data_dict = {
     'ID': [101, 102, 103, 104, 105, 106],
     'Name': ['An', 'Bình', 'Cường', 'Dương', np.nan, 'Hạnh'],
     'Age': [25, np.nan, 30, 22, 28, 35],
@@ -12,7 +12,7 @@ employee_data = {
 df_nv = pd.DataFrame(employee_data)
 
 # bảng Phòng ban
-department_data = {
+department_data_dict = {
     'Department': ['HR', 'IT', 'Finance', 'Marketing'],
     'Manager': ['Trang', 'Khoa', 'Minh', 'Lan']
 }
