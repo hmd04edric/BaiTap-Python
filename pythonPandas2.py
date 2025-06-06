@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # bảng Nhân viên
-employee_data = {
+employee_data_dict = {
     'ID': [101, 102, 103, 104, 105, 106],
     'Name': ['An', 'Bình', 'Cường', 'Dương', np.nan, 'Hạnh'],
     'Age': [25, np.nan, 30, 22, 28, 35],
@@ -12,7 +12,7 @@ employee_data = {
 df_nv = pd.DataFrame(employee_data)
 
 # bảng Phòng ban
-department_data = {
+department_data_dict = {
     'Department': ['HR', 'IT', 'Finance', 'Marketing'],
     'Manager': ['Trang', 'Khoa', 'Minh', 'Lan']
 }
@@ -40,22 +40,22 @@ df_nv['Salary_after_tax'] = (df_nv['Salary'] * 0.9).astype(int)
 
 #  Lọc nhân viên phòng IT và tuổi > 25
 nv_it_gt25 = df_nv[(df_nv['Department'] == 'IT') & (df_nv['Age'] > 25)]
-print("\nNhân viên phòng IT và tuổi > 25:")
+print("Nhân viên phòng IT và tuổi > 25:")
 print(nv_it_gt25)
 
 #  Sắp xếp theo Salary_after_tax giảm dần
 df_nv_sorted = df_nv.sort_values(by='Salary_after_tax', ascending=False)
-print("\nBảng Nhân viên sau khi sắp xếp theo Salary_after_tax giảm dần:")
+print("Bảng Nhân viên sau khi sắp xếp theo Salary_after_tax giảm dần:")
 print(df_nv_sorted)
 
 #  Nhóm theo Department và tính lương trung bình
 avg_salary_by_dept = df_nv.groupby('Department')['Salary'].mean()
-print("\nMức lương trung bình theo phòng ban:")
+print("Mức lương trung bình theo phòng ban:")
 print(avg_salary_by_dept)
 
 #  merge 
 df_merged = pd.merge(df_nv, df_pb, on='Department', how='left')
-print("\nBảng nhân viên kèm tên Manager:")
+print("Bảng nhân viên kèm tên Manager:")
 print(df_merged)
 
 #Tạo bảng Nhân viên mới và thêm vào bảng chính
@@ -70,5 +70,5 @@ nhan_vien_moi['Salary_after_tax'] = (nhan_vien_moi['Salary'] * 0.9).astype(int)
 
 # Gộp bảng nhân viên
 df_nv_final = pd.concat([df_nv, nhan_vien_moi], ignore_index=True)
-print("\nBảng Nhân viên sau khi thêm nhân viên mới:")
+print("Bảng Nhân viên sau khi thêm nhân viên mới:")
 print(df_nv_final)
