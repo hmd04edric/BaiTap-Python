@@ -192,3 +192,10 @@ $RECYCLE.BIN/
 *.txt
 *.pdf
 *.xml
+
+# Download directory
+# Bỏ qua tất cả file trong thư mục download
+/download/*
+# Nhưng vẫn giữ lại thư mục và file .gitkeep
+!/download/
+!/download/.gitkeep
